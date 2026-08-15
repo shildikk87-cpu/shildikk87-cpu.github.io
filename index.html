@@ -64,7 +64,7 @@ body {
 
     height: auto;
 
-    margin: 0 auto 25px;
+    margin: 0 auto 15px;
 }
 
 /* Decorative separator */
@@ -330,7 +330,18 @@ body {
         font-size: 16px;
     }
 }
+.whatsapp-icon {
+    font-size: 0;
+    position: relative;
+}
 
+.whatsapp-icon::before {
+    content: "◔";
+    font-size: 52px;
+    font-weight: bold;
+    color: white;
+    transform: rotate(-35deg);
+}
 </style>
 </head>
 
@@ -381,9 +392,9 @@ body {
         href="https://wa.me/447789015008"
     >
 
-        <div class="icon">
-            ☎
-        </div>
+<div class="icon whatsapp-icon">
+    <span>◔</span>
+</div>
 
         <div>
 
