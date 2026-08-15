@@ -7,6 +7,7 @@
 <title>Grass & Lawn Maintenance</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -15,89 +16,428 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f1f6f1;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f5f8f1 0%,
+            #edf4e9 75%,
+            #dcebd5 100%
+        );
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 20px;
 }
 
+/* Main card */
+
 .card {
     width: 100%;
-    max-width: 450px;
-    background: white;
-    border-radius: 24px;
-    padding: 30px 22px;
+    max-width: 610px;
+
+    background: rgba(255,255,255,0.97);
+
+    border-radius: 28px;
+
+    padding: 55px 60px 45px;
+
     text-align: center;
-    box-shadow: 0 10px 35px rgba(0,0,0,.12);
+
+    box-shadow:
+        0 15px 45px rgba(40,70,35,0.18);
+
+    position: relative;
+
+    overflow: hidden;
 }
+
+/* Logo */
 
 .logo {
+    display: block;
+
     width: 100%;
-    max-width: 380px;
+    max-width: 500px;
+
     height: auto;
-    margin-bottom: 20px;
+
+    margin: 0 auto 25px;
 }
 
-.subtitle {
-    font-size: 18px;
-    color: #59635a;
-    margin-bottom: 30px;
+/* Decorative separator */
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    margin: 15px auto 28px;
+
+    max-width: 420px;
 }
+
+.separator-line {
+    height: 1px;
+    background: #398f49;
+
+    flex: 1;
+}
+
+.grass-icon {
+    color: #159447;
+    font-size: 36px;
+    line-height: 1;
+}
+
+/* Main title */
+
+.title {
+    font-size: 34px;
+    font-weight: 700;
+
+    color: #202629;
+
+    line-height: 1.15;
+
+    margin: 0 auto 20px;
+
+    max-width: 480px;
+}
+
+/* Description */
+
+.description {
+    font-size: 21px;
+
+    color: #5c6264;
+
+    line-height: 1.45;
+
+    margin-bottom: 38px;
+}
+
+/* Buttons */
 
 .button {
-    display: block;
+    display: flex;
+
+    align-items: center;
+
     width: 100%;
-    padding: 17px;
-    margin: 14px 0;
-    border-radius: 14px;
+
+    min-height: 105px;
+
+    margin: 20px 0;
+
+    padding: 20px 35px;
+
+    border-radius: 18px;
+
     text-decoration: none;
-    font-size: 19px;
+
+    color: white;
+
+    text-align: left;
+
+    box-shadow:
+        0 7px 18px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(0,0,0,0.20);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+/* WhatsApp */
+
+.whatsapp {
+    background: linear-gradient(
+        135deg,
+        #00b83f,
+        #09c653
+    );
+}
+
+/* Facebook */
+
+.facebook {
+    background: linear-gradient(
+        135deg,
+        #1769d1,
+        #347de0
+    );
+}
+
+/* Icons */
+
+.icon {
+    width: 65px;
+    height: 65px;
+
+    margin-right: 25px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 48px;
+
     font-weight: bold;
+
     color: white;
 }
 
-.whatsapp {
-    background: #25D366;
+/* Button text */
+
+.button-title {
+    font-size: 27px;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    margin-bottom: 7px;
 }
 
-.facebook {
-    background: #1877F2;
+.button-subtitle {
+    font-size: 18px;
+
+    font-weight: 400;
+
+    opacity: 0.95;
 }
+
+/* Footer */
 
 .footer {
-    margin-top: 28px;
-    color: #777;
-    font-size: 14px;
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #d7ded5;
+
+    color: #286b34;
+
+    font-size: 18px;
 }
+
+.footer-icon {
+    font-size: 25px;
+
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+/* Grass at bottom */
+
+.grass {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 55px;
+
+    pointer-events: none;
+
+    opacity: 0.25;
+
+    background:
+        repeating-linear-gradient(
+            78deg,
+            transparent 0px,
+            transparent 7px,
+            #49a849 8px,
+            transparent 10px,
+            transparent 17px
+        );
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 35px 22px 35px;
+
+        border-radius: 24px;
+    }
+
+    .logo {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 27px;
+    }
+
+    .description {
+        font-size: 18px;
+        margin-bottom: 28px;
+    }
+
+    .button {
+        min-height: 90px;
+
+        padding: 15px 20px;
+
+        border-radius: 16px;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+
+        margin-right: 18px;
+
+        font-size: 38px;
+    }
+
+    .button-title {
+        font-size: 23px;
+    }
+
+    .button-subtitle {
+        font-size: 16px;
+    }
+
+    .footer {
+        font-size: 16px;
+    }
+}
+
 </style>
 </head>
+
 
 <body>
 
 <div class="card">
 
-    <img src="logo.png"
-         alt="Grass and Lawn Maintenance"
-         class="logo">
+    <!-- YOUR LOGO -->
 
-    <div class="subtitle">
-        Professional Garden & Lawn Care
+    <img
+        src="logo.png"
+        alt="Grass and Lawn Maintenance"
+        class="logo"
+    >
+
+
+    <!-- Decorative separator -->
+
+    <div class="separator">
+
+        <div class="separator-line"></div>
+
+        <div class="grass-icon">🌱</div>
+
+        <div class="separator-line"></div>
+
     </div>
 
-    <a class="button whatsapp"
-       href="https://wa.me/447789015008">
-        WhatsApp
+
+    <!-- Main text -->
+
+    <h1 class="title">
+        Professional Garden<br>
+        & Lawn Care
+    </h1>
+
+    <div class="description">
+        Reliable. Friendly. Local.<br>
+        Keeping your garden looking its best.
+    </div>
+
+
+    <!-- WhatsApp -->
+
+    <a
+        class="button whatsapp"
+        href="https://wa.me/447789015008"
+    >
+
+        <div class="icon">
+            ☎
+        </div>
+
+        <div>
+
+            <div class="button-title">
+                WhatsApp
+            </div>
+
+            <div class="button-subtitle">
+                Message us directly
+            </div>
+
+        </div>
+
     </a>
 
-    <a class="button facebook"
-       href="https://www.facebook.com/profile.php?id=61560833679302">
-        Facebook
+
+    <!-- Facebook -->
+
+    <a
+        class="button facebook"
+        href="https://www.facebook.com/profile.php?id=61560833679302"
+    >
+
+        <div class="icon">
+            f
+        </div>
+
+        <div>
+
+            <div class="button-title">
+                Facebook
+            </div>
+
+            <div class="button-subtitle">
+                Visit our Facebook page
+            </div>
+
+        </div>
+
     </a>
+
+
+    <!-- Footer -->
 
     <div class="footer">
+
+        <span class="footer-icon">🌿</span>
+
         Thank you for choosing us!
+
     </div>
+
+
+    <div class="grass"></div>
 
 </div>
 
